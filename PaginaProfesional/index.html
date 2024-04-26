@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="StyleSheet" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+        window.onload = function () {
+            alert("cargado...");
+        }
+    </script>  <!-- Carga de script en el head -->
+
+
+    <!-- Script para el deslizamiento general de botones -->
+    <script> 
+        $(document).ready(function() {
+            $('a[href^="#"]').click(function() {
+                var destino = $(this.hash);
+                if (destino.length == 0) {
+                    destino = $('a[name="' + this.hash.substr(1) + '"]');
+                }
+                if (destino.length == 0) {
+                    destino = $('html');
+                }
+                $('html, body').animate({ scrollTop: destino.offset().top }, 500);
+                return false;
+            });
+        });
+    </script>
+
+
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1> Bienvenido a nuestra Web </h1>
+            <p>Sitio web de nuestra empresa familiar dedicada 20 años al rubro</p>
+            <div class="btns">
+                <a href="#caracteristicas" class="btn" id="btnChar" >Características</a>
+
+                <a href="#testimonios" class="btn" id="btnTest">Testimonios</a>
+
+                <a href="#contacto" class="btn" id="btnCont">Contacto</a>
+            </div>
+            
+
+        </div>   
+    </header>
+    
+    <section id="caracteristicas">
+        <div class="container">
+            <h2> Características principales</h2>
+            <div class="caracteristica">
+                <h3>Facilidad de uso</h3>
+                <p>Nuestra plataforma es fácil de usar para cualquier persona</p>
+            </div>
+            <div class="caracteristica">
+                <h3>Diseño Moderno</h3>
+                <p>Nuestro diseño está actualizado con las últimas tendencias</p>
+            </div>
+            <div class="caracteristica">
+                <h3>Soporte 24/7</h3>
+                <p>Ofrecemos soprte técnico las 24 horas del día</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <ul>
+                <li>
+                    <img src="img/testimonio1.jpg" alt="Testimonio 1">
+                    <p>"¡Increíble servicio! ¡Gracias por hacer mi vida más fácil!"</p>
+                    <cite>- Cliente feliz</cite>
+                </li>
+                <li>
+                    <img src="img/testimonio2.jpg" alt="Testimonio 2">
+                    <p>"¡No puedo creer lo fácil que es usar esta plataforma!"</p>
+                    <cite>- Cliente satisfecho</cite>
+                </li>
+                <li>
+                    <img src="img/testimonio3.jpg" alt="Testimonio 3">
+                    <p>"¡Nunca pensé que encontraría una solución tan genial!"</p>
+                    <cite>- Otro cliente satisfecho</cite>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+    <section id="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo" required>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>👏 Desarrollado por Esta Gran Seccion ✌</p>
+        </div>
+    </footer>
+</body>
+</html>
